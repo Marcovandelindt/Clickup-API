@@ -20,6 +20,10 @@ class ComposerStaticInitdba5ec78d4f078e85992138fd4ba109b
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\HttpFoundation\\' => 33,
         ),
+        'D' => 
+        array (
+            'Dcblogdev\\PdoWrapper\\' => 21,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -42,6 +46,10 @@ class ComposerStaticInitdba5ec78d4f078e85992138fd4ba109b
         'Symfony\\Component\\HttpFoundation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
+        ),
+        'Dcblogdev\\PdoWrapper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dcblogdev/pdo-wrapper/src',
         ),
         'App\\' => 
         array (

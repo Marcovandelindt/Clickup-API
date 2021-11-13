@@ -1,22 +1,31 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'd2e7ae0de6cc172fa0c8c242e4747a642ed6456e',
         'name' => 'marcovandelindt/clickup',
         'dev' => true,
     ),
     'versions' => array(
+        'dcblogdev/pdo-wrapper' => array(
+            'pretty_version' => 'v2.0.1',
+            'version' => '2.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../dcblogdev/pdo-wrapper',
+            'aliases' => array(),
+            'reference' => '6c048b1838858d3d825b75f11b98d13b6cf43eee',
+            'dev_requirement' => false,
+        ),
         'marcovandelindt/clickup' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'd2e7ae0de6cc172fa0c8c242e4747a642ed6456e',
             'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(

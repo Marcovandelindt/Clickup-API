@@ -12,3 +12,12 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');
 define('DB_NAME', 'clickup');
+
+$databaseParams = [
+    'username' => DB_USER,
+    'database' => DB_NAME,
+    'password' => DB_PASS,
+    'type'     => 'mysql',
+    'charset'  => 'utf8',
+    'host'     => 'localhost',
+];

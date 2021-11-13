@@ -10,5 +10,6 @@ return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Routing\\' => array($vendorDir . '/symfony/routing'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
+    'Dcblogdev\\PdoWrapper\\' => array($vendorDir . '/dcblogdev/pdo-wrapper/src'),
     'App\\' => array($baseDir . '/app'),
 );
