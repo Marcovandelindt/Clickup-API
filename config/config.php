@@ -1,5 +1,7 @@
 <?php
 
+use Dcblogdev\PdoWrapper\Database;
+
 //site name
 define('SITE_NAME', 'Clickup API');
 
@@ -22,3 +24,6 @@ $databaseParams = [
     'charset'  => 'utf8',
     'host'     => 'localhost',
 ];
+
+$connection = new Database($databaseParams);
+
