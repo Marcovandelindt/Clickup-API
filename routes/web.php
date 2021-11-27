@@ -15,3 +15,10 @@ $routes->add('home', new Route(constant('URL_SUBFOLDER') . '/', [
     'controller' => 'HomeController',
     'method' => 'index',
 ], []));
+
+$routes->add('clickup-data', new Route(constant('URL_SUBFOLDER') . '/clickup/retrieve-data', [
+    'controller' => 'ClickUpDataController',
+    'method' => 'retrieveData',
+], [
+    'id' => '[0-9]+'
+]));

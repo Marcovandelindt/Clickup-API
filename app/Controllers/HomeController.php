@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\View;
 use Dcblogdev\PdoWrapper\Database;
 use Symfony\Component\Routing\RouteCollection;
+use ClickUp\Client as ClickUpClient;
 
 class HomeController
 {
@@ -25,6 +26,7 @@ class HomeController
             'users' => $this->connection->run('SELECT * FROM `users`')->fetchAll(),
             'test' => 'test',
         ];
+
         View::make('pages/home', $data);
     }
 }

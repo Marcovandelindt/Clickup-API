@@ -9,6 +9,7 @@
   "require": {
     "symfony/routing": "^5.3",
     "symfony/http-foundation": "^5.3",
-    "dcblogdev/pdo-wrapper": "^2.0"
+    "dcblogdev/pdo-wrapper": "^2.0",
+    "howyi/clickup-php": "^1.0"
   }
 }
