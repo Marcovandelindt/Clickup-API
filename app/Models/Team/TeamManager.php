@@ -65,4 +65,29 @@ class TeamManager extends Team
 
         $connection->run($sql);
     }
+
+    /**
+     * Get all teams
+     *
+     * @return mixed array | bool
+     */
+    public static function getAllTeams()
+    {
+        global $connection;
+
+        $sql = '
+            SELECT
+                `t`.*
+            FROM
+                `teams` AS `t`
+        ';
+
+        $results = $connection->run($sql)->fetchAll(\PDO::FETCH_CLASS, Team::class);
+
+        if (!empty($results)) {
+            return $results;
+        }
+
+        return false;
+    }
 }

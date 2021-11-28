@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `spaces` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `clickup_id` INT(11) NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    `updated_at` TIMESTAMP,
+    PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;

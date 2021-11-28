@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Space\Space;
+use App\Models\Space\SpaceManager;
 use App\Models\Team\Team;
 use App\Models\Team\TeamManager;
 use App\Models\User\UserManager;
@@ -42,10 +44,32 @@ class ClickUpDataController
                             $teamObject->clickup_id = $team->id();
                             $teamObject->name = $team->name();
                             $teamObject->created_at = date('Y-m-d H:i:s');
+                            TeamManager::saveTeam($teamObject);
+                        }
+                    }
+                }
 
-                            prettyPrint($teamObject, true);
+                # Get spaces
+                $existingTeams = TeamManager::getAllTeams();
 
-                            TeamManager::saveTeam($team);
+                if (!empty($existingTeams)) {
+                    foreach ($existingTeams as $existingTeam) {
+                        $clickUpTeam = $client->team($existingTeam->getClickUpId());
+                        if (!empty($clickUpTeam)) {
+                            $spaces = $clickUpTeam->spaces();
+                            if (!empty($spaces)) {
+                                foreach ($spaces as $space) {
+                                    $existingSpace = SpaceManager::getSpaceByClickUpId($space->id());
+
+                                    if (!$existingSpace) {
+                                        $newSpace = new Space;
+                                        $newSpace->clickup_id = $space->id();
+                                        $newSpace->name = $space->name();
+                                        $newSpace->created_at = date('Y-m-d H:i:s');
+                                        SpaceManager::saveSpace($newSpace);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
