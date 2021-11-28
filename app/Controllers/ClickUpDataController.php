@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\Space\Space;
 use App\Models\Space\SpaceManager;
+use App\Models\Status\Status;
+use App\Models\Status\StatusManager;
 use App\Models\Team\Team;
 use App\Models\Team\TeamManager;
 use App\Models\User\UserManager;
@@ -67,6 +69,24 @@ class ClickUpDataController
                                         $newSpace->name = $space->name();
                                         $newSpace->created_at = date('Y-m-d H:i:s');
                                         SpaceManager::saveSpace($newSpace);
+                                    }
+
+                                    # Check if statuses need to be saved
+                                    $statuses = $space->statuses();
+
+                                    if (!empty($statuses)) {
+                                        foreach ($statuses as $status) {
+                                            $existingStatus = StatusManager::getStatusByName($status->name());
+
+
+                                            if (!$existingStatus) {
+                                                $newStatus = new Status;
+                                                $newStatus->name = $status->name();
+                                                $newStatus->color = $status->color();
+                                                $newStatus->created_at = date('Y-m-d H:i:s');
+                                                StatusManager::saveStatus($newStatus);
+                                            }
+                                        }
                                     }
                                 }
                             }
